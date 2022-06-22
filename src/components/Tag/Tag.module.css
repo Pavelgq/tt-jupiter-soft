@@ -1,0 +1,14 @@
+.tag {
+  
+  padding: 13px 17px 8px 16px ;
+
+  border-radius: 19px;
+  
+  background-color: var(--white);
+  color: var(--text-dark);
+
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+}

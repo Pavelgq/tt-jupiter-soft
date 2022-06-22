@@ -1,0 +1,37 @@
+.list {
+  width: 514px;
+  display: flex;
+  justify-content: space-between;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.item {
+
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  
+  
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.link:hover {
+  text-shadow: 0 0 10px var(--wight);
+}
+
+.link:active {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1040px) {
+  
+}

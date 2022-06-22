@@ -1,0 +1,22 @@
+* {
+
+}
+
+
+
+:root {
+  --text-light: #ffffff;
+  --text-dark: #391400;
+  --text-option: #381400a6;
+
+  --background-light: #FDF0E9;
+  --background-dark: #28293E;
+
+  --hover-main: #16CD53;
+
+  --white: #ffffff;
+  --shadow: #38140014;
+  --border: #ffffff4a;
+
+  --secondary: #381400a6;
+}

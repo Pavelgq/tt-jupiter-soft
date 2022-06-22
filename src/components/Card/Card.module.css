@@ -1,0 +1,29 @@
+.card {
+  position: relative;
+  width: 370px;
+  height: 416px;
+  border-radius: 6px;
+}
+
+
+.tag {
+  position: absolute;
+
+  top: 256px;
+  left: 48px;
+}
+
+.cardTitle {
+  position: absolute;
+
+  top: 321px;
+  left: 48px;
+
+  font-family: 'Epilogue', sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 900;
+
+  color: var(--text-light);
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+.filterList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  padding-top: 84px;
+  margin-bottom: 75px;
+}
+
+.galeryList {
+  width: 1170px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.galeryItem {
+  margin-bottom: 32px;
+}
