@@ -1,4 +1,10 @@
-import { MouseEvent, useReducer, useState } from "react";
+import {
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import cn from "classnames";
 import { GaleryProps } from "./Galery.props";
 import styles from "./Galery.module.css";
@@ -10,14 +16,40 @@ import { SomeDataI } from "../../pages/main/main";
 import { data } from "../../data/mockData";
 import { Select } from "../Select/Select";
 
+interface KeyboardEvent {
+  key: string;
+}
+
 export const Galery = ({}: GaleryProps): JSX.Element => {
   const [state, dispatch] = useReducer(DataReducer, initialState);
 
-  const [currentItem, setCurrentItem] = useState<number | null>(null);
-  const [currentCategory, setCurrentCategory] = useState("all");
+  const [currentItem, setCurrentItem] = useState<string | null>(null);
+  const [currentCategory, setCurrentCategory] = useState("Show All");
   const { filterItems } = useFilterableData(state, "category", currentCategory);
 
-  const handleClick = (e: MouseEvent, category: string) => {
+  const handleDelete = useCallback(
+    (ev: KeyboardEvent) => {
+      console.log(ev.key, currentItem);
+      if (ev.key === "Delete" && currentItem !== null) {
+        console.log("yes");
+        dispatch({
+          type: ActionKind.DeleteItem,
+          payload: currentItem,
+        });
+      }
+    },
+    [currentItem]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleDelete, true);
+    return () => {
+      document.removeEventListener("keydown", handleDelete, true);
+    };
+  }, [handleDelete]);
+
+  const handleClick = (category: string) => {
+    console.log("dsfs", category);
     if (!category) {
       setCurrentCategory("all");
     } else {
@@ -37,19 +69,30 @@ export const Galery = ({}: GaleryProps): JSX.Element => {
     });
   };
 
+  const handleSelect = (e: MouseEvent, name: string) => {
+    if (currentItem !== name) {
+      setCurrentItem(name);
+    } else {
+      setCurrentItem(null);
+    }
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.filterSelect}>
-        <Select options={["Show All", ...getCategory(state)]} />
+        <Select
+          options={["Show All", ...getCategory(state)]}
+          handleSelect={handleClick}
+        />
       </div>
 
       <ul className={styles.filterList}>
         <li className={styles.filterItem}>
           <button
             className={cn(styles.filterButton, {
-              [styles.active]: currentCategory === "all",
+              [styles.active]: currentCategory === "Show All",
             })}
-            onClick={(e: MouseEvent) => handleClick(e, "")}
+            onClick={(e: MouseEvent) => handleClick("")}
           >
             Show All
           </button>
@@ -60,7 +103,7 @@ export const Galery = ({}: GaleryProps): JSX.Element => {
               className={cn(styles.filterButton, {
                 [styles.active]: currentCategory === category,
               })}
-              onClick={(e: MouseEvent) => handleClick(e, category)}
+              onClick={(e: MouseEvent) => handleClick(category)}
             >
               {category}
             </button>
@@ -70,11 +113,18 @@ export const Galery = ({}: GaleryProps): JSX.Element => {
 
       <ul className={styles.galeryList}>
         {filterItems.map((el, index) => (
-          <li key={`${el.title}-${index}`} className={styles.galeryItem}>
+          <li
+            key={`${el.title}-${index}`}
+            className={cn(styles.galeryItem, {
+              [styles.activeCard]: currentItem === el.title,
+            })}
+          >
             <Card
               title={el.title}
               category={el.category}
               imageUrl={el.imageUrl}
+              setTag={setCurrentCategory}
+              onClick={(e) => handleSelect(e, el.title)}
             />
           </li>
         ))}

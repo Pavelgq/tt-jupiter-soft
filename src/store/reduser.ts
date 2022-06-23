@@ -12,18 +12,21 @@ export const initialState: State = data;
 
 export enum ActionKind {
   Add = 'add',
+  DeleteItem = 'deleteItem'
 }
 
 type Action = {
   type: ActionKind,
-  payload: SomeDataI[];
+  payload: any;
 }
 
 export function DataReducer (state: State, action: Action) {
   switch (action.type) {
     case 'add':
       return state.concat(action.payload);
-  
+    case 'deleteItem': 
+    const index = state.findIndex(el => el.title === action.payload)
+      return state.slice(0, index).concat(state.slice(index + 1));
     default:
       return state
   }

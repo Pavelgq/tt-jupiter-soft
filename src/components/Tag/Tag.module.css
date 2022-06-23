@@ -1,5 +1,5 @@
 .tag {
-  
+  border: none;
   padding: 13px 17px 8px 16px ;
 
   border-radius: 19px;
@@ -11,4 +11,5 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
+  cursor: pointer;
 }
