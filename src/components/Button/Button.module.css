@@ -29,7 +29,27 @@
   background-color: inherit;
 }
 
+.inherit:hover {
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+
+.inherit:active{
+  opacity: 0.7;
+}
+
+
 .primary {
   background-color: var(--primary);
   color: var(--text-light);
 }
+
+.white {
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+.white:active {
+  transform: scale(0.95);
+} 

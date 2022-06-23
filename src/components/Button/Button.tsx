@@ -18,6 +18,7 @@ export const Button = ({
           [styles.outlined]: variant === "outlined",
           [styles.inherit]: color === "inherit",
           [styles.primary]: color === "primary",
+          [styles.white]: color === "white",
         },
         className
       )}

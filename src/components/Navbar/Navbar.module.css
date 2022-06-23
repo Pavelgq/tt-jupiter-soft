@@ -10,13 +10,10 @@
 }
 
 .item {
-
   font-family: 'Epilogue', sans-serif;
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
-  
-  
 }
 
 .link {
@@ -25,7 +22,7 @@
 }
 
 .link:hover {
-  text-shadow: 0 0 10px var(--wight);
+  text-shadow: 0 0 10px var(--white);
 }
 
 .link:active {
@@ -33,5 +30,9 @@
 }
 
 @media screen and (max-width: 1040px) {
+
   
+  .list {
+    display: none;
+  }
 }

@@ -3,5 +3,5 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 export interface ButtonProps extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   variant?: 'contained' | 'outlined';
-  color?: 'inherit' | 'primary';
+  color?: 'inherit' | 'primary' | 'white';
 }

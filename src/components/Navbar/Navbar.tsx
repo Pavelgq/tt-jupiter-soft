@@ -14,3 +14,5 @@ export const Navbar = ({ items }: NavbarProps) => {
     </ul>
   );
 };
+
+//TODO: Сделать navbar на мобильной версии (бургер меню? нет в макете)
