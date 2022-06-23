@@ -12,7 +12,6 @@ import { useFilterableData } from "../../hooks/useFilterableData";
 import { getCategory } from "../../utils/utils";
 import { Button, Card } from "..";
 import { ActionKind, DataReducer, initialState } from "../../store/reduser";
-import { SomeDataI } from "../../pages/main/main";
 import { data } from "../../data/mockData";
 import { Select } from "../Select/Select";
 

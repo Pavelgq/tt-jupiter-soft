@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { ReactComponent as LogoIcon } from "../../assets/svg/logo.svg";
 import { Button, Galery, Navbar } from "../../components";
 import { NavbarItems } from "../../data/mockData";
-import { NavbarItemI } from "../../interfaces/common";
-import { getCategory } from "../../utils/utils";
 import styles from "./main.module.css";
 export interface SomeDataI {
   title: string;

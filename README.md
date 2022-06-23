@@ -1,6 +1,6 @@
 # tt-Jupiter-soft
 
-[Demo](https://pavelgq.github.com/tt-jupiter-soft)
+[Demo](https://pavelgq.github.io/tt-jupiter-soft/)
 
 ### `git clone https://github.com/Pavelgq/tt-jupiter-soft.git`
 
