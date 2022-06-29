@@ -25,12 +25,10 @@ export const Galery = ({}: GaleryProps): JSX.Element => {
   const [currentItem, setCurrentItem] = useState<string | null>(null);
   const [currentCategory, setCurrentCategory] = useState("Show All");
   const { filterItems } = useFilterableData(state, "category", currentCategory);
-
+  console.log(currentCategory);
   const handleDelete = useCallback(
     (ev: KeyboardEvent) => {
-      console.log(ev.key, currentItem);
       if (ev.key === "Delete" && currentItem !== null) {
-        console.log("yes");
         dispatch({
           type: ActionKind.DeleteItem,
           payload: currentItem,
@@ -48,9 +46,8 @@ export const Galery = ({}: GaleryProps): JSX.Element => {
   }, [handleDelete]);
 
   const handleClick = (category: string) => {
-    console.log("dsfs", category);
     if (!category) {
-      setCurrentCategory("all");
+      setCurrentCategory("Show All");
     } else {
       setCurrentCategory(category);
     }
