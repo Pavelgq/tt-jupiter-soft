@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tt-jupiter-soft/static/css/main.14e1516e.css",
-    "main.js": "/tt-jupiter-soft/static/js/main.9322cae5.js",
+    "main.js": "/tt-jupiter-soft/static/js/main.5689cdc8.js",
     "static/media/logo.svg": "/tt-jupiter-soft/static/media/logo.54bf0dfe453d8588c217c9dfa1587f5d.svg",
     "index.html": "/tt-jupiter-soft/index.html",
     "main.14e1516e.css.map": "/tt-jupiter-soft/static/css/main.14e1516e.css.map",
-    "main.9322cae5.js.map": "/tt-jupiter-soft/static/js/main.9322cae5.js.map"
+    "main.5689cdc8.js.map": "/tt-jupiter-soft/static/js/main.5689cdc8.js.map"
   },
   "entrypoints": [
     "static/css/main.14e1516e.css",
-    "static/js/main.9322cae5.js"
+    "static/js/main.5689cdc8.js"
   ]
 }
