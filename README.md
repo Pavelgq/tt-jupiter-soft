@@ -6,7 +6,7 @@
 
 ### `cd tt-jupiter-soft`
 
-### `npm instal`
+### `npm install`
 
 ### `npm start`
 
