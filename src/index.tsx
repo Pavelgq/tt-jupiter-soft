@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/tt-jupiter-soft">
+    <BrowserRouter>
       <RoutesList />
     </BrowserRouter>
   </React.StrictMode>
